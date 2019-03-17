@@ -112,10 +112,11 @@ class Service(Base):
 ```
 
 3. Note
-* 5-star rating feature
-To allow hospitals have a 5-star rating, I copied and modified the code from the following page.
-https://codepen.io/redlabor/pen/wyiAH
-This 5-star rating feature provides half star rating as well. 
+* 5-star rating feature to allow hospitals have a 5-star rating, I copied and modified the code from the following page.  
+https://codepen.io/redlabor/pen/wyiAH  
+Note that this 5-star rating feature provides half star rating as well.  
+![5 star rating](./image/rating.png)
+
 (./static/styles.css)
 ```
 /* Base setup */
@@ -163,4 +164,4 @@ Currently, this application only provides third party login from Facebook. Googl
 ```
 project.py:382:80: E501 line too long (81 > 79 characters)
 ```
-(If you give a line break in 382 then it shows another error.)# fullstack-item-catalog
+(If you give a line break in 382 then it shows another error.)
