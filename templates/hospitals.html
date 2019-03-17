@@ -1,0 +1,142 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+
+
+	<div class="row top-service">
+		<div class="col-md-10"></div>
+		<div class="col-md-2 text-right">
+					</div>
+	</div>
+	<div class="row divider blue">
+		<div class="col-md-12"></div>
+	</div>
+	<div class="row banner main">
+		<div class="col-md-1"></div>
+		<div class="col-md-11 padding-none">
+			<h1>Hospital List</h1>
+		</div>
+	</div>
+
+<div class = 'flash'>
+		      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+
+</div>
+	
+	<div class="row padding-top padding-bottom">
+		<div class="col-md-1"></div>
+		<div class="col-md-10 padding-none">
+			<a href="{{url_for('newhospital')}}">
+				<button class="btn btn-default" id="new-hospital">
+					<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add hospital
+				</button>
+			</a>
+		</div>
+		<div class="col-md-1"></div>
+	</div>
+	{% for hospital in hospital %}
+		<a href = "{{url_for('showservice', hospital_id = hospital.id)}}">
+			<div class="row">
+				<div class="col-md-1"></div>
+					<div class="col-md-10 hospital-list">
+						<h3>{{hospital.name}}</h3>
+						<h4>{{hospital.location}}</h4>
+						<h5>{{hospital.description}}</h5>
+						<h5>Editor's rating: </h5>
+						<h5 class="rate"> 
+							{%if hospital.rating == 0%}
+                            <label for="rating0" title="No star"></label>
+                            {% endif %}
+                            {%if 0 < hospital.rating <= 0.5%}
+                            <label class="half" for="rating1" title="1/2 star"></label>
+                            <label for="rating0" title="No star"></label>
+                            {% endif %}
+                            {%if 0.5 < hospital.rating <= 1.0%}
+                            <label for="rating2" title="1 star"></label>
+                            <label class="half" for="rating1" title="1/2 star"></label>
+                            {% endif %}
+                            {%if 1.0 < hospital.rating <= 1.5%}
+                            <label class="half" for="rating3" title="1 1/2 star"></label>
+                            <label for="rating2" title="1 star"></label>
+                            <label class="half" for="rating1" title="1/2 star"></label>
+                            {% endif %}
+                            {%if 1.5 < hospital.rating <= 2.0%}
+                            <label for="rating4" title="2 star"></label>
+                            <label class="half" for="rating3" title="1 1/2 star"></label>
+                            <label for="rating2" title="1 star"></label>
+                            <label class="half" for="rating1" title="1/2 star"></label>
+                            {% endif %}
+                            {%if 2.0 < hospital.rating <= 2.5%}
+                            <label class="half" for="rating5" title="2 1/2 star"></label>
+                            <label for="rating4" title="2 star"></label>
+                            <label class="half" for="rating3" title="1 1/2 star"></label>
+                            <label for="rating2" title="1 star"></label>
+                            <label class="half" for="rating1" title="1/2 star"></label>
+                            {% endif %}
+                            {%if 2.5 < hospital.rating <= 3.0%}
+                            <label for="rating6" title="3 star"></label>
+                            <label class="half" for="rating5" title="2 1/2 star"></label>
+                            <label for="rating4" title="2 star"></label>
+                            <label class="half" for="rating3" title="1 1/2 star"></label>
+                            <label for="rating2" title="1 star"></label>
+                            <label class="half" for="rating1" title="1/2 star"></label>
+                            {% endif %}
+                            {%if 3.0 < hospital.rating <= 3.5%}
+                            <label class="half" for="rating7" title="3 1/2 star"></label>
+                            <label for="rating6" title="3 star"></label>
+                            <label class="half" for="rating5" title="2 1/2 star"></label>
+                            <label for="rating4" title="2 star"></label>
+                            <label class="half" for="rating3" title="1 1/2 star"></label>
+                            <label for="rating2" title="1 star"></label>
+                            <label class="half" for="rating1" title="1/2 star"></label>
+                            {% endif %}
+                            {%if 3.5 < hospital.rating <= 4.0%}
+                            <label for="rating8" title="4 star"></label>
+                            <label class="half" for="rating7" title="3 1/2 star"></label>
+                            <label for="rating6" title="3 star"></label>
+                            <label class="half" for="rating5" title="2 1/2 star"></label>
+                            <label for="rating4" title="2 star"></label>
+                            <label class="half" for="rating3" title="1 1/2 star"></label>
+                            <label for="rating2" title="1 star"></label>
+                            <label class="half" for="rating1" title="1/2 star"></label>
+                            {% endif %}
+                            {%if 4.0 < hospital.rating <= 4.5%}
+                            <label class="half" for="rating9" title="4 1/2 star"></label>
+                            <label for="rating8" title="4 star"></label>
+                            <label class="half" for="rating7" title="3 1/2 star"></label>
+                            <label for="rating6" title="3 star"></label>
+                            <label class="half" for="rating5" title="2 1/2 star"></label>
+                            <label for="rating4" title="2 star"></label>
+                            <label class="half" for="rating3" title="1 1/2 star"></label>
+                            <label for="rating2" title="1 star"></label>
+                            <label class="half" for="rating1" title="1/2 star"></label>
+                            {% endif %}
+                            {%if 4.5 < hospital.rating <= 5.0%}
+                            <label for="rating10" title="5 star"></label>
+                            <label class="half" for="rating9" title="4 1/2 star"></label>
+                            <label for="rating8" title="4 star"></label>
+                            <label class="half" for="rating7" title="3 1/2 star"></label>
+                            <label for="rating6" title="3 star"></label>
+                            <label class="half" for="rating5" title="2 1/2 star"></label>
+                            <label for="rating4" title="2 star"></label>
+                            <label class="half" for="rating3" title="1 1/2 star"></label>
+                            <label for="rating2" title="1 star"></label>
+                            <label class="half" for="rating1" title="1/2 star"></label>
+                            {% endif %}
+                        </h5>
+					</div>
+				<div class="col-md-1"></div>
+			</div>
+		</a>
+	{% endfor %}
+{% endblock %}
