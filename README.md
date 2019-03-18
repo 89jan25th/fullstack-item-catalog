@@ -23,15 +23,15 @@ VMbox, vagrant, python, flask, and sqlalchemy are required to run this applicati
 ```
 
 ### What this application looks like
-1. main page
+1. main page  
 Main page has a overview of hospitals with their name, location, description, and editor's rating.
 ![main page](./image/mainpage.png)
 
-2. service page
+2. service page  
 Service page shows a service list of the hospital. Each service has a name, description, recovery time, and cost.
 ![service page](./image/servicelist.png)
 
-3. creat or edit page
+3. creat or edit page  
 Creating or editing a hospital or service is available. 
 ![create page](./image/createpage.png)
 
