@@ -158,7 +158,7 @@ Note that this 5-star rating feature provides half star rating as well.
 ```
 
 * Oauth2.0 login feature
-Currently, this application only provides third party login from Facebook. Google plus login button keeps disappearing and the problem solving is under way. However, log-in/-out with Facebook feature functions correctly.
+Currently, this application only provides third party login from Google due to Facebook's policy that only accepts https:// address.
 
 * project.py passed pycodestyle with one error:
 ```
